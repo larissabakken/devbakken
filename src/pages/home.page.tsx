@@ -3,6 +3,7 @@ import { ColorSchemeToggle } from '../components/ColorSchemeToggle/colorSchemeTo
 import { HeroBullets } from '../components/HeroBullets/heroBullets';
 import { UserCard } from '../components/UserCard/userCard';
 import { Experience } from '../components/Experience/experience';
+import { References } from '../components/References/references';
 
 export function HomePage() {
   return (
@@ -12,6 +13,7 @@ export function HomePage() {
       <ColorSchemeToggle />
       <HeroBullets />
       <Experience />
+      <References />
     </>
   );
 }
