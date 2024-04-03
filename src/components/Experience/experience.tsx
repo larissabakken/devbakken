@@ -65,7 +65,7 @@ export function Experience() {
   ));
 
   return (
-    <Container size={700} className={classes.wrapper}>
+    <Container size={1000} className={classes.wrapper}>
       <Text className={classes.supTitle}>Experiences</Text>
 
       <Title className={classes.title} order={2}>
