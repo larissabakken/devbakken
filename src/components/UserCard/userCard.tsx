@@ -24,21 +24,20 @@ const infos = [
     label: 'Email',
     link: 'mailto:larissabakken@gmail.com',
   },
-  { value: <IconDownload />, label: 'Resume', link: './resume' },
+  { value: <IconDownload />, label: 'Resume', link: './resume.pdf' },
 ];
 
 export function UserCard() {
   return (
     <Card withBorder radius="md" className={classes.card} id="about">
       <Card.Section
-        h={150}
+        h={200}
         style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80)',
+          backgroundImage: 'url(./bg.png)',
         }}
       />
       <Avatar
-        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-9.png"
+        src="./profile.jpeg"
         size={170}
         radius={90}
         mx="auto"
@@ -50,21 +49,37 @@ export function UserCard() {
           Larissa Bakken
         </Text>
         <Text ta="center" fz="lg" c="dimmed">
-          Fullstack Engineer
+          Software Engineer - Greater Oslo Region, Norway
         </Text>
       </Box>
 
       <Group mt="md" justify="center" gap={30}>
         {infos.map((info) => (
           <div key={info.label}>
-            <Link to={info.link} className={classes.link}>
-              <Text ta="center" fz="lg" fw={500}>
-                {info.value}
-              </Text>
-              <Text ta="center" fz="sm" c="dimmed" lh={1}>
-                {info.label}
-              </Text>
-            </Link>
+            {info.label === 'Resume' ? (
+              <a
+                href={info.link}
+                className={classes.link}
+                target="_blank"
+                download
+              >
+                <Text ta="center" fz="lg" fw={500}>
+                  {info.value}
+                </Text>
+                <Text ta="center" fz="sm" c="dimmed" lh={1}>
+                  {info.label}
+                </Text>
+              </a>
+            ) : (
+              <Link to={info.link} className={classes.link} target="_blank">
+                <Text ta="center" fz="lg" fw={500}>
+                  {info.value}
+                </Text>
+                <Text ta="center" fz="sm" c="dimmed" lh={1}>
+                  {info.label}
+                </Text>
+              </Link>
+            )}
           </div>
         ))}
       </Group>

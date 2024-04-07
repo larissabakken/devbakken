@@ -1,19 +1,31 @@
-import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
+import {
+  Image,
+  Container,
+  Title,
+  Text,
+  List,
+  ThemeIcon,
+  Avatar,
+  rem,
+} from '@mantine/core';
 import { IconCheck } from '@tabler/icons-react';
 import classes from './heroBullets.module.css';
 
 export function HeroBullets() {
-  const image = 'https://cdni.iconscout.com/illustration/premium/thumb/developer-4268348-3560991.png?f=webp';
+  const image =
+    'https://cdni.iconscout.com/illustration/premium/thumb/developer-4268348-3560991.png?f=webp';
   return (
     <Container size="md">
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            A <span className={classes.highlight}>modern</span> React <br /> components library
+            Hi, I'm <span className={classes.highlight}>Larissa Bakken</span>
+            <br /> a Full Stack Developer.
           </Title>
-          <Text c="dimmed" mt="md">
-            Build fully functional accessible web applications faster than ever – Mantine includes more than 120 customizable components and hooks to
-            cover you in any situation
+
+          <Text c="dimmed" className={classes.innerSubtitle}>
+            <Avatar src="./noflag.svg" alt="it's me" mr={8} radius="sm" />
+            Living in Norway, Greater Oslo Region
           </Text>
 
           <List
@@ -22,29 +34,41 @@ export function HeroBullets() {
             size="sm"
             icon={
               <ThemeIcon size={20} radius="xl">
-                <IconCheck style={{ width: rem(12), height: rem(12) }} stroke={1.5} />
+                <IconCheck
+                  style={{ width: rem(12), height: rem(12) }}
+                  stroke={1.5}
+                />
               </ThemeIcon>
             }
           >
             <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks export types
+              <b>Profile:</b> Experienced full-stack developer with over 4 years
+              of hands-on experience in web development. I am always eager to
+              take on new challenges and continue to grow my skills as a
+              software engineer.
             </List.Item>
             <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in any project
+              <b>Main Stacks:</b> Javascript || Typescript || NodeJs ||
+              ExpressJS || NestJs || ReactJS || Nextjs
             </List.Item>
             <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with keyboard
+              <b>Education:</b> Uniceub - Software analysis and development ||
+              IBM Fullstack Developer - Professional certificate guided by
+              experts at IBM.
+            </List.Item>
+            <List.Item>
+              <b>Languages</b> – I'm a Brazilian native, I'm fluent in
+              Portuguese and English, and currently learning the Norwegian
+              language.
+            </List.Item>
+            <List.Item>
+              <b>Hackathoons</b> – When I'm not coding or exploring, you can
+              find me participating in hackathons and unleashing my creativity!
+            </List.Item>
+            <List.Item>
+              <b>Open To Work</b> – I'm currently looking for new opportunities.
             </List.Item>
           </List>
-
-          <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
-              Get started
-            </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
-              Source code
-            </Button>
-          </Group>
         </div>
         <Image src={image} className={classes.image} />
       </div>

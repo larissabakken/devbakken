@@ -203,7 +203,12 @@ export interface FeatureProps {
 export function Feature({ icon: Icon, title }: FeatureProps) {
   return (
     <div className={classes.tech}>
-      <ThemeIcon variant="light" size={40} radius={40}>
+      <ThemeIcon
+        variant="gradient"
+        gradient={{ from: 'yellow', to: 'pink' }}
+        size={40}
+        radius={40}
+      >
         <Icon style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
       </ThemeIcon>
       <Text mx={6} my="auto" className={classes.techTitle}>
@@ -216,7 +221,7 @@ export function Tech() {
   const iconStyle = { width: rem(12), height: rem(12) };
 
   return (
-    <Container className={classes.wrapper}>
+    <Container className={classes.wrapper} id="tech">
       <Text
         className={classes.title}
         inherit

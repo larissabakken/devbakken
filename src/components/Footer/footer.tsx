@@ -9,18 +9,9 @@ import classes from './footer.module.css';
 const data = [
   {
     links: [
-      { label: 'Experiences', link: '#' },
+      { label: 'Experiences', link: '#experiences' },
       { label: 'About me', link: '#' },
-      { label: 'Contact', link: '#' },
-      { label: 'Tech', link: '#' },
-    ],
-  },
-  {
-    links: [
-      { label: 'Open Source', link: '#' },
-      { label: 'Media assets', link: '#' },
-      { label: 'Changelog', link: '#' },
-      { label: 'Releases', link: '#' },
+      { label: 'Tech', link: '#tech' },
     ],
   },
 ];

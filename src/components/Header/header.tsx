@@ -4,11 +4,7 @@ import { useDisclosure } from '@mantine/hooks';
 import classes from './header.module.css';
 import { ColorSchemeToggle } from '../ColorSchemeToggle/colorSchemeToggle.tsx';
 
-const links = [
-  { link: '/about', label: 'About' },
-  { link: '/pricing', label: 'Projects' },
-  { link: '/learn', label: 'Tech' },
-];
+const links = [{ link: '/about', label: 'About' }];
 
 export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
@@ -36,7 +32,7 @@ export function Header() {
           {items}
         </Group>
 
-        <Group gap={5} visibleFrom="xs">
+        <Group gap={5}>
           <ColorSchemeToggle />
         </Group>
 
