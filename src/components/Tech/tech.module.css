@@ -10,6 +10,7 @@
     font-weight: 900;
     margin-bottom: var(--mantine-spacing-md);
     text-align: center;
+    font-size: rem(38px);
 
     @media (max-width: $mantine-breakpoint-sm) {
         font-size: rem(28px);
@@ -17,10 +18,25 @@
     }
 }
 
+.techTitle {
+    text-align: left;
+    text-wrap: normal;
+    max-width: 80%;
+}
+
 .description {
-    text-align: center;
+    font-size: var(--mantine-font-size-lg);
+    text-align: left;
+    margin: auto;
 
     @media (max-width: $mantine-breakpoint-sm) {
-        text-align: left;
+        font-size: var(--mantine-font-size-md);
     }
+}
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
 }

@@ -1,86 +1,299 @@
-import { Tabs, rem, ThemeIcon, Text, Title, Container, SimpleGrid } from '@mantine/core';
-import { IconPhoto, IconMessageCircle, IconSettings, IconGauge, IconCookie, IconUser, IconMessage2, IconLock } from '@tabler/icons-react';
+import {
+  Tabs,
+  rem,
+  ThemeIcon,
+  Text,
+  Container,
+  SimpleGrid,
+} from '@mantine/core';
+import {
+  IconBrowser,
+  IconServerCog,
+  IconDotsVertical,
+  IconBrandReact,
+  IconBrandNextjs,
+  IconBrandTailwind,
+  IconBrandVite,
+  IconBrandAngular,
+  IconArtboard,
+  IconBrandBootstrap,
+  IconAtom,
+  IconBrandReactNative,
+  IconBrandHtml5,
+  IconBrandTypescript,
+  IconShoppingBag,
+  IconBrandNodejs,
+  IconCat,
+  IconBrandPhp,
+  IconBrandLaravel,
+  IconBrandJavascript,
+  IconBrandPrisma,
+  IconBrandMysql,
+  IconBrandMongodb,
+  IconBrandDocker,
+  IconBrandAws,
+  IconGitFork,
+  IconMessage,
+  IconBulb,
+  IconTransform,
+  IconBooks,
+  IconMoodNerd,
+  IconLanguage,
+} from '@tabler/icons-react';
 import classes from './tech.module.css';
-export const MOCKDATA = [
+
+export const frontendData = [
   {
-    icon: IconGauge,
-    title: 'Extreme performance',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
+    icon: IconBrandReact,
+    title: 'ReactJS',
   },
   {
-    icon: IconUser,
-    title: 'Privacy focused',
-    description:
-      'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',
+    icon: IconBrandNextjs,
+    title: 'NextJS',
   },
   {
-    icon: IconCookie,
-    title: 'No third parties',
-    description: 'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',
+    icon: IconBrandReactNative,
+    title: 'React Native',
   },
   {
-    icon: IconLock,
-    title: 'Secure by default',
-    description: 'Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right',
+    icon: IconBrandVite,
+    title: 'ViteJS',
   },
   {
-    icon: IconMessage2,
-    title: '24/7 Support',
-    description: 'Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail',
+    icon: IconBrandAngular,
+    title: 'AngularJS',
+  },
+  {
+    icon: IconAtom,
+    title: 'Electron',
+  },
+  {
+    icon: IconBrandTailwind,
+    title: 'TailwindCSS',
+  },
+  {
+    icon: IconArtboard,
+    title: 'MaterialUI',
+  },
+  {
+    icon: IconBrandBootstrap,
+    title: 'Bootstrap',
+  },
+  {
+    icon: IconBrandTypescript,
+    title: 'Typescript, Javascript, Vanilla',
+  },
+  {
+    icon: IconBrandHtml5,
+    title: 'HTML5, CSS, Sass',
+  },
+  {
+    icon: IconShoppingBag,
+    title: 'Shopify, Vtex',
+  },
+  {
+    icon: IconBrandDocker,
+    title: 'Docker',
+  },
+  {
+    icon: IconBrandAws,
+    title: 'AWS Tools',
+  },
+  {
+    icon: IconGitFork,
+    title: 'Git, CI/CD',
   },
 ];
 
-export function Feature({ icon: Icon, title, description }: never) {
+export const backendData = [
+  {
+    icon: IconBrandNodejs,
+    title: 'NodeJS',
+  },
+  {
+    icon: IconCat,
+    title: 'NestsJS',
+  },
+  {
+    icon: IconBrandJavascript,
+    title: 'ExpressJS',
+  },
+  {
+    icon: IconBrandJavascript,
+    title: 'Fastify',
+  },
+  {
+    icon: IconBrandPrisma,
+    title: 'Prisma, TypeORM, Sequelize',
+  },
+  {
+    icon: IconBrandPhp,
+    title: 'PHP',
+  },
+  {
+    icon: IconBrandLaravel,
+    title: 'Laravel',
+  },
+  {
+    icon: IconBrandMysql,
+    title: 'MySQL, PostgreSQL, SQLite, SQL Server',
+  },
+  {
+    icon: IconBrandMongodb,
+    title: 'MongoDB, Redis',
+  },
+  {
+    icon: IconBrandDocker,
+    title: 'Docker',
+  },
+  {
+    icon: IconBrandAws,
+    title: 'AWS Tools',
+  },
+  {
+    icon: IconGitFork,
+    title: 'Git, CI/CD',
+  },
+];
+
+export const softSkillsData = [
+  {
+    icon: IconMessage,
+    title: 'Communication',
+  },
+  {
+    icon: IconMoodNerd,
+    title: 'Problem-Solving Abilities',
+  },
+  {
+    icon: IconTransform,
+    title: 'Adaptability',
+  },
+  {
+    icon: IconTransform,
+    title: 'Teamwork',
+  },
+  {
+    icon: IconBooks,
+    title: 'Continuous Learning',
+  },
+  {
+    icon: IconBulb,
+    title: 'Creativity',
+  },
+  {
+    icon: IconLanguage,
+    title: 'Portuguese - Native',
+  },
+  {
+    icon: IconLanguage,
+    title: 'English - Advanced',
+  },
+  {
+    icon: IconLanguage,
+    title: 'Norwegian - Basic',
+  },
+];
+
+export interface FeatureProps {
+  icon: any;
+  title: string;
+}
+
+export function Feature({ icon: Icon, title }: FeatureProps) {
   return (
-    <div>
+    <div className={classes.tech}>
       <ThemeIcon variant="light" size={40} radius={40}>
         <Icon style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
       </ThemeIcon>
-      <Text mt="sm" mb={7}>
+      <Text mx={6} my="auto" className={classes.techTitle}>
         {title}
-      </Text>
-      <Text size="sm" c="dimmed" lh={1.6}>
-        {description}
       </Text>
     </div>
   );
 }
 export function Tech() {
   const iconStyle = { width: rem(12), height: rem(12) };
-  const features = MOCKDATA.map((feature, index) => <Feature {...feature} key={index} />);
 
   return (
     <Container className={classes.wrapper}>
-      <Title className={classes.title}>Integrate effortlessly with any technology stack</Title>
+      <Text
+        className={classes.title}
+        inherit
+        variant="gradient"
+        gradient={{ from: 'pink', to: 'yellow' }}
+      >
+        Skills & Technologies
+      </Text>
 
-      <Container size={560} py={2}>
+      <Container size={900} py={2}>
         <Text size="sm" className={classes.description}>
-          Every once in a while, you’ll see a Golbat that’s missing some fangs. This happens when hunger drives it to try biting a Steel-type Pokémon.
+          I possess expertise across various technologies, encompassing both
+          frontend and backend domains. While the following list showcases the
+          key skills and technologies I excel in, it's important to note that I
+          am continuously expanding my knowledge and eagerly embrace new
+          opportunities for growth and learning.
         </Text>
       </Container>
       <Tabs color="orange" radius="xs" defaultValue="frontend" py={20}>
         <Tabs.List>
-          <Tabs.Tab value="frontend" leftSection={<IconPhoto style={iconStyle} />}>
+          <Tabs.Tab
+            value="frontend"
+            leftSection={<IconBrowser style={iconStyle} />}
+          >
             Frontend
           </Tabs.Tab>
-          <Tabs.Tab value="backend" leftSection={<IconMessageCircle style={iconStyle} />}>
+          <Tabs.Tab
+            value="backend"
+            leftSection={<IconServerCog style={iconStyle} />}
+          >
             Backend
           </Tabs.Tab>
-          <Tabs.Tab value="softskills" leftSection={<IconSettings style={iconStyle} />}>
+          <Tabs.Tab
+            value="softskills"
+            leftSection={<IconDotsVertical style={iconStyle} />}
+          >
             Soft Skills
           </Tabs.Tab>
         </Tabs.List>
 
         <Tabs.Panel value="frontend">
-          <SimpleGrid mt={60} cols={{ base: 1, sm: 2, md: 3 }} spacing={{ base: 'xl', md: 50 }} verticalSpacing={{ base: 'xl', md: 50 }}>
-            {features}
+          <SimpleGrid
+            mt={20}
+            cols={{ base: 1, sm: 2, md: 3 }}
+            spacing={{ base: 'sm' }}
+            verticalSpacing={{ base: 'lg' }}
+          >
+            {frontendData.map((feature, index) => (
+              <Feature {...feature} key={index} />
+            ))}
           </SimpleGrid>
         </Tabs.Panel>
 
-        <Tabs.Panel value="backend">Messages tab content</Tabs.Panel>
-
-        <Tabs.Panel value="softskills">Settings tab content</Tabs.Panel>
+        <Tabs.Panel value="backend">
+          <SimpleGrid
+            mt={20}
+            cols={{ base: 1, sm: 2, md: 3 }}
+            spacing={{ base: 'sm' }}
+            verticalSpacing={{ base: 'lg' }}
+          >
+            {backendData.map((feature, index) => (
+              <Feature {...feature} key={index} />
+            ))}
+          </SimpleGrid>
+        </Tabs.Panel>
+        <Tabs.Panel value="softskills">
+          <SimpleGrid
+            mt={20}
+            cols={{ base: 1, sm: 2, md: 3 }}
+            spacing={{ base: 'sm' }}
+            verticalSpacing={{ base: 'lg' }}
+          >
+            {softSkillsData.map((feature, index) => (
+              <Feature {...feature} key={index} />
+            ))}
+          </SimpleGrid>
+        </Tabs.Panel>
       </Tabs>
     </Container>
   );

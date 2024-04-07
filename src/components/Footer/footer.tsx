@@ -1,5 +1,9 @@
 import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandLinkedin, IconBrandGithub, IconMail } from '@tabler/icons-react';
+import {
+  IconBrandLinkedin,
+  IconBrandGithub,
+  IconMail,
+} from '@tabler/icons-react';
 import classes from './footer.module.css';
 
 const data = [
@@ -22,16 +26,21 @@ const data = [
 ];
 
 export function Footer() {
-  const groups = data.map((group) => {
+  const groups = data.map((group, index) => {
     const links = group.links.map((link, index) => (
-      <Text<'a'> key={index} className={classes.link} component="a" href={link.link} onClick={(event) => event.preventDefault()}>
+      <Text
+        key={index}
+        className={classes.link}
+        component="a"
+        href={link.link}
+        onClick={(event) => event.preventDefault()}
+      >
         {link.label}
       </Text>
     ));
 
     return (
-      <div className={classes.wrapper} key={group.title}>
-        <Text className={classes.title}>{group.title}</Text>
+      <div className={classes.wrapper} key={index}>
         {links}
       </div>
     );
@@ -52,15 +61,29 @@ export function Footer() {
           © 2024 Larissa Bakken.
         </Text>
 
-        <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
+        <Group
+          gap={0}
+          className={classes.social}
+          justify="flex-end"
+          wrap="nowrap"
+        >
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandGithub style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandGithub
+              style={{ width: rem(18), height: rem(18) }}
+              stroke={1.5}
+            />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconBrandLinkedin
+              style={{ width: rem(18), height: rem(18) }}
+              stroke={1.5}
+            />
           </ActionIcon>
           <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconMail style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            <IconMail
+              style={{ width: rem(18), height: rem(18) }}
+              stroke={1.5}
+            />
           </ActionIcon>
         </Group>
       </Container>

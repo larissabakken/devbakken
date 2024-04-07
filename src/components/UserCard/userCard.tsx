@@ -1,28 +1,35 @@
-import { Card, Avatar, Text, Group, Box, NavLink, SimpleGrid } from '@mantine/core';
-import { IconBrandGithub, IconBrandLinkedin, IconMail, IconDownload } from '@tabler/icons-react';
+import { Card, Avatar, Text, Group, Box } from '@mantine/core';
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+  IconDownload,
+} from '@tabler/icons-react';
 import classes from './userCard.module.css';
+import { Link } from 'react-router-dom';
 
-const stats = [
-  { value: <IconBrandGithub />, label: 'Github' },
-  { value: <IconBrandLinkedin />, label: 'Linkedin' },
-  { value: <IconMail />, label: 'Email' },
-  { value: <IconDownload />, label: 'Resume' },
+const infos = [
+  {
+    value: <IconBrandGithub />,
+    label: 'Github',
+    link: 'https://github.com/larissabakken/',
+  },
+  {
+    value: <IconBrandLinkedin />,
+    label: 'Linkedin',
+    link: 'https://www.linkedin.com/in/larissabakken/',
+  },
+  {
+    value: <IconMail />,
+    label: 'Email',
+    link: 'mailto:larissabakken@gmail.com',
+  },
+  { value: <IconDownload />, label: 'Resume', link: './resume' },
 ];
 
 export function UserCard() {
-  const items = stats.map((stat) => (
-    <div key={stat.label}>
-      <Text ta="center" fz="lg" fw={500}>
-        {stat.value}
-      </Text>
-      <Text ta="center" fz="sm" c="dimmed" lh={1}>
-        {stat.label}
-      </Text>
-    </div>
-  ));
-
   return (
-    <Card withBorder radius="md" className={classes.card}>
+    <Card withBorder radius="md" className={classes.card} id="about">
       <Card.Section
         h={150}
         style={{
@@ -48,7 +55,18 @@ export function UserCard() {
       </Box>
 
       <Group mt="md" justify="center" gap={30}>
-        {items}
+        {infos.map((info) => (
+          <div key={info.label}>
+            <Link to={info.link} className={classes.link}>
+              <Text ta="center" fz="lg" fw={500}>
+                {info.value}
+              </Text>
+              <Text ta="center" fz="sm" c="dimmed" lh={1}>
+                {info.label}
+              </Text>
+            </Link>
+          </div>
+        ))}
       </Group>
     </Card>
   );

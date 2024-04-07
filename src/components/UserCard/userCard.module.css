@@ -5,4 +5,7 @@
 .avatar {
     border: rem(4px) solid var(--mantine-color-body);
 }
-
+.link {
+     color: var(--mantine-color-yellow-filled);
+    text-decoration: none;
+}
