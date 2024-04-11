@@ -240,20 +240,21 @@ export function Tech() {
           opportunities for growth and learning.
         </Text>
       </Container>
-      <Tabs color="orange" radius="xs" defaultValue="frontend" py={20}>
+      <Tabs color="orange" radius="xs" defaultValue="backend" py={20}>
         <Tabs.List>
-          <Tabs.Tab
-            value="frontend"
-            leftSection={<IconBrowser style={iconStyle} />}
-          >
-            Frontend
-          </Tabs.Tab>
           <Tabs.Tab
             value="backend"
             leftSection={<IconServerCog style={iconStyle} />}
           >
             Backend
           </Tabs.Tab>
+          <Tabs.Tab
+            value="frontend"
+            leftSection={<IconBrowser style={iconStyle} />}
+          >
+            Frontend
+          </Tabs.Tab>
+
           <Tabs.Tab
             value="softskills"
             leftSection={<IconDotsVertical style={iconStyle} />}
