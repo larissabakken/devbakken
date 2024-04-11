@@ -20,7 +20,7 @@ export function HeroBullets() {
         <div className={classes.content}>
           <Title className={classes.title}>
             Hi, I'm <span className={classes.highlight}>Larissa Bakken</span>
-            <br /> a Full Stack Developer.
+            <br /> a Software Engineer.
           </Title>
 
           <Text c="dimmed" className={classes.innerSubtitle}>
